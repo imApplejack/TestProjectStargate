@@ -6,12 +6,12 @@ using Stargate;
 namespace TestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class StargateGame
     {
         [TestMethod]
         public void TestMethod1()
         {
-            CardImporter ci = new CardImporter() { Path = "../../../" + Const.SetFile };
+            Stargate.Stargate.CardImporter ci = new Stargate.Stargate.CardImporter() { Path = TestConstants.SETPATH + Const.SetFile };
             ci.Load();
             Assert.AreEqual(292, ci.list.ToList().Count);
 
