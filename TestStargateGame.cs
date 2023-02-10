@@ -14,7 +14,7 @@ namespace TestProject1
         public void TestMethod1()
         {
             Library library = new Library(TestConstants.SETPATH);
-            StargateGame stargateGame = new StargateGame(1, library) ;
+            StargateGame stargateGame = new StargateGame(library) ;
             StargateGameMock.InitPlayer1WithMock(stargateGame);
 
 
