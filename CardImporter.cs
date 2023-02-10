@@ -15,8 +15,8 @@ namespace TestProject1
 
 
 
-            InitPhase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService()});
-           // Phase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService() });
+            //InitPhase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService()});
+            Phase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService() });
 
             p.Run();
 
