@@ -4,6 +4,7 @@ using Stargate.SGGodot;
 using Stargate;
 using Stargate.StateMachine;
 using System.Diagnostics;
+using Stargate.Stargate.Enum;
 
 namespace TestProject1
 {
@@ -15,8 +16,8 @@ namespace TestProject1
         {
 
             //InitPhase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService()});
-            InitPhase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService() });
-            p.StargateResultHandler += HandlerEventTestMethod;
+            Phase p = new InitPhase(new GameState() { CurrentPlayer = new Player(), CardService = new Stargate.Service.CardService() });
+            p.gameState.StargateResultHandler += HandlerEventTestMethod;
 
             p.Run();
 
@@ -25,6 +26,7 @@ namespace TestProject1
 
         public void HandlerEventTestMethod(object sender, EventArgs e)
         {
+            ((StargateResult)e).actionResult = ActionResult.Failure;
             Debug.WriteLine(e);
         }
 
