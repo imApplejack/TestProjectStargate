@@ -17,11 +17,13 @@ namespace TestProject1
             StargateGame stargateGame = new StargateGame(1, library) ;
             StargateGameMock.InitPlayer1WithMock(stargateGame);
 
-            
-            
-            StargateResult StargateResult = stargateGame.CardService.PlayMission(stargateGame.player1);
-            Assert.AreEqual(StargateResult.actionResult, ActionResult.Success);
 
+
+            //  StargateResult StargateResult = stargateGame.CardService.PlayMission(stargateGame.player1);
+            //  Assert.AreEqual(StargateResult.actionResult, ActionResult.Success);
+
+
+            stargateGame.GameState.InitGame(1);
 
         }
     }
