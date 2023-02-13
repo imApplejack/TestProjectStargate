@@ -5,6 +5,7 @@ using Stargate;
 using Stargate.StateMachine;
 using System.Diagnostics;
 using Stargate.Stargate.Enum;
+using Stargate.Stargate.Event;
 
 namespace TestProject1
 {
@@ -32,11 +33,17 @@ namespace TestProject1
             Assert.AreEqual(3, p.gameState.CurrentPlayer.Energy);
 
 
+
+
+
+            //p.gameState.ProcessEvent(new PlayCardEvent() { })
+
+
         }
 
         public void HandlerEventTestMethod(object sender, EventArgs e)
         {
-            ((StargateResult)e).actionResult = ActionResult.Failure;
+         //   ((StargateResult)e).actionResult = ActionResult.Failure;
             Debug.WriteLine(e);
         }
 
