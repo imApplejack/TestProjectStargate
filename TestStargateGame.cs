@@ -25,6 +25,9 @@ namespace TestProject1
 
             stargateGame.GameState.InitGame(1);
 
+
+
+
         }
     }
 }
