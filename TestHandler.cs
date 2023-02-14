@@ -22,7 +22,6 @@ namespace TestProject1
 
             p.gameState.StargateResultHandler += HandlerEventTestMethod;
 
-            
             p.Run();
 
 
