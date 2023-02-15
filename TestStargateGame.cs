@@ -15,7 +15,7 @@ namespace TestProject1
         {
             Library library = new Library(TestConstants.SETPATH);
             StargateGame stargateGame = new StargateGame(library) ;
-            StargateGameMock.InitPlayer1WithMock(stargateGame);
+            StargateGameMock.InitPlayersWithMock(stargateGame);
 
 
 
