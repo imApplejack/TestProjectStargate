@@ -18,7 +18,7 @@ namespace TestProject1
         {
 
             //StateAction myAction = new StateAction();
-           // myAction.Play();
+            // myAction.Play();
 
 
 
@@ -29,14 +29,14 @@ namespace TestProject1
 
             //StatePhase mySubPhase = new StatePhase();
             //mySubPhase.AddAction(new StateAction()).AddAction(new StateAction());
-            
-            
+
+
             //mySubPhase.AddAction(new StateAction());
             //myPhase.AddAction(mySubPhase);
-            
-            
-            
-            InitPhase  i = new InitPhase();
+
+
+
+            MockPhase i = new MockPhase();
             i.Play();
 
             i.Play(new StateEvent());
