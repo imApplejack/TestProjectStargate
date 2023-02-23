@@ -36,7 +36,7 @@ namespace TestProject1
             
             
             
-           InitPhase  i = new InitPhase();
+            InitPhase  i = new InitPhase();
             i.Play();
 
             i.Play(new StateEvent());
