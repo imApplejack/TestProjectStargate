@@ -36,7 +36,7 @@ namespace TestProject1
 
 
 
-            MockPhase i = new MockPhase();
+            MockPhase2 i = new MockPhase2();
             i.Play();
 
             i.Play(new StateEvent());
