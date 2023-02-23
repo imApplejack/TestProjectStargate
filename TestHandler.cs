@@ -6,7 +6,7 @@ using Stargate.StateMachine;
 using System.Diagnostics;
 using Stargate.Stargate.Enum;
 using Stargate.Stargate.Event;
-
+using Stargate.Stargate.StateMachine;
 
 namespace TestProject1
 {
@@ -37,7 +37,12 @@ namespace TestProject1
             
             
            InitPhase  i = new InitPhase();
-            i.Play();   
+            i.Play();
+
+            i.Play(new StateEvent());
+
+
+
 
 
 
