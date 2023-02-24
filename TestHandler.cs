@@ -36,15 +36,15 @@ namespace TestProject1
 
 
 
-            MockPhase2 i = new MockPhase2();
+            MockPhase i = new MockPhase();
             i.Play();
 
-            i.Play(new StateEvent());
+           // i.Play(new StateEvent());
 
 
 
 
-
+            Debug.WriteLine("end");
 
         }
 
