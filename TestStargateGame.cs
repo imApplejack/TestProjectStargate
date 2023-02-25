@@ -4,6 +4,7 @@ using Stargate.SGGodot;
 using Stargate;
 using Stargate.Mock;
 using Stargate.Stargate.Enum;
+using System.Diagnostics;
 
 namespace TestProject1
 {
@@ -27,6 +28,8 @@ namespace TestProject1
 
 
 
+
+            Debug.WriteLine("end");
 
         }
     }
