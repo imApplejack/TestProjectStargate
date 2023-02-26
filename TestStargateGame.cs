@@ -5,6 +5,7 @@ using Stargate;
 using Stargate.Mock;
 using Stargate.Stargate.Enum;
 using System.Diagnostics;
+using Stargate.Stargate.Event;
 
 namespace TestProject1
 {
@@ -24,9 +25,16 @@ namespace TestProject1
             //  Assert.AreEqual(StargateResult.actionResult, ActionResult.Success);
 
 
+
+
+
+            GameState gs = stargateGame.GameState;  
+
             stargateGame.GameState.InitGame(1);
 
 
+           
+           gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
 
 
             Debug.WriteLine("end");

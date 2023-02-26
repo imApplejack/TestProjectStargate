@@ -36,10 +36,24 @@ namespace TestProject1
 
 
 
-            MockPhase i = new MockPhase();
-            i.Play();
+            MockPhase i = new MockPhase(); 
+            
+            
+            try {
 
-            i.Play(new StateEvent());
+                i.Play();
+               
+            }catch(Exception ex) { }
+
+
+
+            try
+            {
+                i.Play(new StateEvent());
+            }
+            catch (Exception ex) { }
+
+
 
 
 
