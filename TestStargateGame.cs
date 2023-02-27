@@ -27,14 +27,10 @@ namespace TestProject1
 
 
 
-
             GameState gs = stargateGame.GameState;  
-
             stargateGame.GameState.InitGame(1);
-
-
-           
-           gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
+            
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
 
 
             Debug.WriteLine("end");
