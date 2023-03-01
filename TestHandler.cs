@@ -36,7 +36,7 @@ namespace TestProject1
 
 
 
-            MockPhase2 i = new MockPhase2(); 
+            MockPhase i = new MockPhase(); 
             
             
             try {

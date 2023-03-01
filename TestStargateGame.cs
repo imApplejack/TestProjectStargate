@@ -59,7 +59,7 @@ namespace TestProject1
             stargateGame.GameState.InitGame(1);
 
 
-            PrintStackRec((StargatePhase)gs.GameStack);
+            //PrintStackRec((StargatePhase)gs.GameStack);
 
 
             gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
@@ -67,10 +67,14 @@ namespace TestProject1
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
+            
+            
+            
+            gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
+            //gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
 
-           
-           
+
 
             Debug.WriteLine("end");
 
