@@ -67,18 +67,62 @@ namespace TestProject1
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
-            
-            
-            
+           // gs.ProcessEvent(new ContinueQuestEvent() { Sender = gs.player1, response=  });
+
+
+
+
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
             //gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
 
 
 
-            Debug.WriteLine("end");
+            Debug.WriteLine("endo");
 
         }
+
+
+        [TestMethod]
+        public void TestQuestResolution()
+        {
+            Library library = new Library(TestConstants.SETPATH);
+            StargateGame stargateGame = new StargateGame(library);
+            StargateGameMock.InitPlayersWithMock(stargateGame);
+
+
+            stargateGame.GameState.CurrentPlayer = stargateGame.GameState.GetEnemyPlayer();
+            QuestResolution qr  = new QuestResolution(stargateGame.GameState);
+
+
+            try
+            {
+                qr.Play();
+
+            }
+            catch (Exception e )
+            {
+
+            }
+
+
+            try
+            {
+                //ContinueQuestEventResponse cqer = new PassEvent() { re };
+                qr.Play(  new ContinueQuestEvent { Sender = stargateGame.GameState.CurrentPlayer, response = ContinueQuestEventResponse.YES });
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+
+
+        }
+
+
 
         private void PrintStackRec(StatePhase p)
         {
