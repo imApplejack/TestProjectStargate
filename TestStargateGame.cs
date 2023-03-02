@@ -88,7 +88,18 @@ namespace TestProject1
         {
             Library library = new Library(TestConstants.SETPATH);
             StargateGame stargateGame = new StargateGame(library);
+            stargateGame.GameState.player1.id = 1;
+            stargateGame.GameState.player2.id = 2;
             StargateGameMock.InitPlayersWithMock(stargateGame);
+
+
+
+            StargateEvent sce = new SelectCardEvent() { SenderId = 1, CardModelId = 0 };
+            sce.Hydrate(stargateGame);
+
+
+            Debug.WriteLine(sce);
+
         }
 
         [TestMethod]
