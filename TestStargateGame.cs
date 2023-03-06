@@ -71,15 +71,16 @@ namespace TestProject1
 
 
 
+            gs.CheckQuestVictory();
 
             // both player pass
-           // gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
-           // gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
+            // gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
+            // gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
 
 
 
-           // gs.ProcessEvent(new ContinueQuestEvent() { Sender = gs.player1, response=  });
+            // gs.ProcessEvent(new ContinueQuestEvent() { Sender = gs.player1, response=  });
 
 
 
