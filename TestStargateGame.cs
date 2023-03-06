@@ -63,16 +63,28 @@ namespace TestProject1
 
 
             gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
+            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[1] });
 
+            gs.ProcessEvent(new PlayCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[12] });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
-            gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
+            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[12] });
+
+
+
+
+            // both player pass
+           // gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
+           // gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
+
+
+
 
            // gs.ProcessEvent(new ContinueQuestEvent() { Sender = gs.player1, response=  });
 
 
 
 
-            gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
+            //gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
             //gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
 
 
