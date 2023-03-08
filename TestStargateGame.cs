@@ -13,6 +13,17 @@ namespace TestProject1
     [TestClass]
     public class TestStargateGame
     {
+
+
+        [TestMethod]
+        public void TestLibrary()
+        {
+            Library library = new Library(TestConstants.SETPATH);
+            StargateGame stargateGame = new StargateGame(library);
+            StargateGameMock.InitPlayersWithMock(stargateGame);
+        }
+
+
         [TestMethod]
         public void TestMethod1()
         {
