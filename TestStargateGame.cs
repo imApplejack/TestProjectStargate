@@ -73,16 +73,21 @@ namespace TestProject1
             //PrintStackRec((StargatePhase)gs.GameStack);
 
 
-            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
-            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[1] });
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[1] });
+            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[0] });
 
-            gs.ProcessEvent(new PlayCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[12] });
+            gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
-            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[12] });
+
+
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[0] });
+
+
+           
 
 
 
-            gs.CheckQuestVictory();
+            //gs.CheckQuestVictory();
 
             // both player pass
             // gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
@@ -102,7 +107,7 @@ namespace TestProject1
 
 
 
-            Debug.WriteLine("endo");
+            Debug.WriteLine(gs.player1.VictoryTotal());
 
         }
 
