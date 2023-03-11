@@ -107,7 +107,7 @@ namespace TestProject1
 
 
 
-            Debug.WriteLine(gs.player1.VictoryTotal());
+            Debug.WriteLine("");
 
         }
 
