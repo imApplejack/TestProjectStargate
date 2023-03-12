@@ -81,7 +81,7 @@ namespace TestProject1
 
 
             gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = new List<CardModel>() { gs.CardRepository.Cards[1] } });
-            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = new List<CardModel>() { gs.CardRepository.Cards[0] } });
+            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel =  gs.CardRepository.Cards[0]  });
 
             gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
@@ -90,8 +90,6 @@ namespace TestProject1
             gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player1, cardModel = new List<CardModel>() { gs.CardRepository.Cards[0] } });
 
 
-           
-
 
 
             //gs.CheckQuestVictory();
@@ -99,7 +97,6 @@ namespace TestProject1
             // both player pass
             // gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
             // gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
-
 
 
 
