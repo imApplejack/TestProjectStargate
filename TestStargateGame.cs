@@ -22,6 +22,12 @@ namespace TestProject1
             Library library = new Library(TestConstants.SETPATH);
             StargateGame stargateGame = new StargateGame(library);
             StargateGameMock.InitPlayersWithMock(stargateGame);
+
+
+           AdversaryModel m =  (AdversaryModel)stargateGame.GameState.CardRepository.Cards[15];
+
+
+            Assert.IsNotNull(m);
         }
 
 
