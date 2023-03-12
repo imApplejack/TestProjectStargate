@@ -7,6 +7,7 @@ using Stargate.Stargate.Enum;
 using System.Diagnostics;
 using Stargate.Stargate.Event;
 using Stargate.StateMachine;
+using Stargate.Stargate.Card;
 
 namespace TestProject1
 {
@@ -42,7 +43,7 @@ namespace TestProject1
             GameState gs = stargateGame.GameState;  
             stargateGame.GameState.InitGame(1);
             
-            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[0] });
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel =  new List<CardModel>() { gs.CardRepository.Cards[0] } });
 
 
             Debug.WriteLine("end");
@@ -73,14 +74,14 @@ namespace TestProject1
             //PrintStackRec((StargatePhase)gs.GameStack);
 
 
-            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = gs.CardRepository.Cards[1] });
-            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[0] });
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel = new List<CardModel>() { gs.CardRepository.Cards[1] } });
+            gs.ProcessEvent(new AssignCharEvent() { Sender = gs.player1, cardModel = new List<CardModel>() { gs.CardRepository.Cards[0] } });
 
             gs.ProcessEvent(new PassEvent() { Sender = gs.player2 });
             gs.ProcessEvent(new PassEvent() { Sender = gs.player1 });
 
 
-            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player1, cardModel = gs.CardRepository.Cards[0] });
+            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player1, cardModel = new List<CardModel>() { gs.CardRepository.Cards[0] } });
 
 
            
@@ -123,7 +124,7 @@ namespace TestProject1
 
 
 
-            StargateEvent sce = new SelectCardEvent() { SenderId = 1, CardModelId = 0 };
+            StargateEvent sce = new SelectCardEvent() { SenderId = 1, CardModelId = new List<int> { 0 } };
             sce.Hydrate(stargateGame);
 
 
