@@ -34,14 +34,42 @@ namespace TestProject1
         [TestMethod]
         public void TestDeck()
         {
-            DeckImporter importer = new DeckImporter() { Path  = TestConstants.DECKPATH };
-            Decklist d =  importer.Load("o\'neil.o8d");
-
-
+            DeckImporter importer = new DeckImporter(TestConstants.DECKPATH) ;
+            Decklist d =  importer.Load("o'neil.o8d");
 
             Assert.IsTrue(d.team.Count == 4);
 
         }
+
+        [TestMethod]
+        public void TestMethodGameWithDecks()
+        {
+            Library library = new Library(TestConstants.SETPATH);
+            StargateGame stargateGame = new StargateGame(library);
+            // StargateGameMock.InitPlayersWithMock(stargateGame);
+
+            DeckImporter importer = new DeckImporter(TestConstants.DECKPATH);
+            Decklist d = importer.Load("o'neil.o8d");
+
+            stargateGame.InitPlayersWithDeck(d, d);
+
+
+             //  StargateResult StargateResult = stargateGame.CardService.PlayMission(stargateGame.player1);
+             //  Assert.AreEqual(StargateResult.actionResult, ActionResult.Success);
+
+
+
+
+             GameState gs = stargateGame.GameState;
+            stargateGame.GameState.InitGame(1);
+
+            //  gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel =  new List<CardModel>() { gs.CardRepository.Cards[0] } });
+
+
+            Debug.WriteLine("end");
+
+        }
+
 
 
         [TestMethod]
@@ -62,7 +90,7 @@ namespace TestProject1
             GameState gs = stargateGame.GameState;  
             stargateGame.GameState.InitGame(1);
             
-            gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel =  new List<CardModel>() { gs.CardRepository.Cards[0] } });
+          //  gs.ProcessEvent(new SelectCardEvent() { Sender = gs.player2, cardModel =  new List<CardModel>() { gs.CardRepository.Cards[0] } });
 
 
             Debug.WriteLine("end");
