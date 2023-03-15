@@ -32,6 +32,19 @@ namespace TestProject1
 
 
         [TestMethod]
+        public void TestDeck()
+        {
+            DeckImporter importer = new DeckImporter() { Path  = TestConstants.DECKPATH };
+            Decklist d =  importer.Load("o\'neil.o8d");
+
+
+
+            Assert.IsTrue(d.team.Count == 4);
+
+        }
+
+
+        [TestMethod]
         public void TestMethod1()
         {
             Library library = new Library(TestConstants.SETPATH);

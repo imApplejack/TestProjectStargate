@@ -9,5 +9,6 @@ namespace TestProject1
     internal class TestConstants
     {
         public static string SETPATH = "../../../";
+        public static string DECKPATH = SETPATH;
     }
 }
